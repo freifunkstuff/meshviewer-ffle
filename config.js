@@ -1,73 +1,39 @@
 module.exports = function () {
   return {
-    // Variables are NODE_ID and NODE_NAME (only a-z0-9\- other chars are replaced with _)
     'nodeInfos': [
       {
         'name': 'Clientstatistik',
-        'href': 'https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/',
-        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/000000026/node?panelId=1&var-node={NODE_ID}&from=now-1d&width=650&height=350&theme=light&_t={TIME}',
-        'title': 'Clientstatistik für {NODE_ID} - weiteren Statistiken',
-        'width': 650,
-        'height': 350
+        'href': 'https://stats.freifunk-leipzig.de/d/GVI39bqGk/nodespublic?orgId=1&refresh=5m&var-nodeid={NODE_ID}',
+        'image': 'https://stats.freifunk-leipzig.de/render/d-solo/GVI39bqGk/statistiken?orgId=1&panelId=2&var-nodeid={NODE_ID}&width=650&height=350&from=now-1d&theme=light',
+        'title': 'Entwicklung der Anzahl der Clients innerhalb des letzten Tages'
       },
       {
-        'name': 'Trafficstatistik',
-        'href': 'https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/',
-        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/000000026/node?panelId=2&from=now-1d&var-node={NODE_ID}&width=650&height=350&theme=light&_t={TIME}',
-        'title': 'Trafficstatistik für {NODE_ID} - weiteren Statistiken',
-        'width': 650,
-        'height': 350
-      },
-      {
-        'name': 'Systemlast',
-        'href': 'https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/',
-        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/000000026/node?panelId=4&from=now-1d&var-node={NODE_ID}&width=650&height=350&theme=light&_t={TIME}',
-        'title': 'Systemlast für {NODE_ID} - weiteren Statistiken',
-        'width': 650,
-        'height': 350
-      },
-      {
-        'name': 'Airtime',
-        'href': 'https://regensburg.freifunk.net/netz/statistik/node/{NODE_ID}/',
-        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/000000026/node?panelId=5&from=now-1d&var-node={NODE_ID}&width=650&height=350&theme=light&_t={TIME}',
-        'title': 'Airtime für {NODE_ID} - weiteren Statistiken',
-        'width': 650,
-        'height': 350
-      }
-    ],
-    'linkInfos': [
-      {
-        'name': 'Statistik für alle Links zwischen diese Knoten',
-        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/nvSNqoHmz/link?panelId=7&var-node={SOURCE_ID}&var-nodetolink={TARGET_ID}&from=now-1d&&width=650&height=350&theme=light&_t={TIME}',
-        'title': 'Linkstatistik des letzten Tages, min und max aller Links zwischen diesen Knoten',
-        'width': 650,
-        'height': 350
-      }
-    ],
-    'globalInfos': [
-      {
-        'name': 'Globale Statistik',
-        'href': 'https://regensburg.freifunk.net/netz/statistik',
-        'image': 'https://grafana.regensburg.freifunk.net/render/d-solo/000000028/globals?panelId=2&from=now-7d&&width=650&height=350&theme=light&_t={TIME}',
-        'title': 'Globale Statistik - weiteren Statistiken',
-        'width': 650,
-        'height': 350
+        'name': 'Traffic',
+        'href': 'https://stats.freifunk-leipzig.de/d/GVI39bqGk/nodespublic?orgId=1&refresh=5m&var-nodeid={NODE_ID}',
+        'image': 'https://stats.freifunk-leipzig.de/render/d-solo/GVI39bqGk/statistiken?orgId=1&panelId=6&var-nodeid={NODE_ID}&width=650&height=350&from=now-1d&theme=light',
+        'title': 'Traffic innerhalb des letzten Tages'
       }
     ],
     // Array of data provider are supported
     'dataPath': [
-      'https://regensburg.freifunk.net/data/'
+      'https://meshviewer.freifunk-leipzig.de/data/'
     ],
-    'siteName': 'Freifunk Regensburg',
+    'siteName': 'Freifunk Leipzig',
     'mapLayers': [
       {
-        'name': 'Wikimedia OSM Map',
-        'url': 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png',
+        'name': 'OpenStreetMap.HOT',
+        'url': 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+        'config': {
+          'maxZoom': 19,
+          'attribution': '&copy; Openstreetmap France | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }
+      },
+      {
+        'name': 'Esri.WorldImagery',
+        'url': '//server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
         'config': {
           'maxZoom': 20,
-          'subdomains': '1234',
-          'attribution': '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use" rel="noopener" target="_blank">Wikimedia maps</a><a href="http://www.openmaptiles.org/" target="_blank">&copy; OpenMapTiles</a> <a href="http://www.openstreetmap.org/about/" target="_blank" rel="noopener">&copy; OpenStreetMap contributors</a>',
-          'start': 6
+          'attribution': 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
         }
       }
     ],
@@ -75,34 +41,35 @@ module.exports = function () {
     'fixedCenter': [
       // Northwest
       [
-        49.3522,
-        11.7752
+  	51.4168,
+        12.1983
       ],
       // Southeast
       [
-        48.7480,
-        12.8917
+	51.2516,
+	12.4791
       ]
     ],
     'domainNames': [
       {
-        'domain': 'ffrgb-bat15',
-        'name': 'Regensburg'
+        'domain': 'l',
+        'name': 'Leipzig (Gluon)'
       },
       {
-        'domain': 'ffrgb',
-        'name': 'Regensburg'
+        'domain': 'meshkit',
+        'name': 'Leipzig (meshkit)'
       }
     ],
     'linkList': [
       {
         'title': 'Impressum',
-        'href': '/verein/impressum/'
+        'href': 'https://freifunk.net/impressum/'
       },
       {
         'title': 'Datenschutz',
-        'href': '/verein/datenschutz/'
+        'href': 'https://freifunk.net/datenschutz/'
       }
     ]
   };
 };
+
