@@ -16,7 +16,7 @@ module.exports = function () {
     ],
     // Array of data provider are supported
     'dataPath': [
-      'https://meshviewer.freifunk-leipzig.de/data/'
+      '/data/'
     ],
     'siteName': 'Freifunk Leipzig',
     'mapLayers': [
