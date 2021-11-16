@@ -3,15 +3,15 @@ module.exports = function () {
     'nodeInfos': [
       {
         'name': 'Clientstatistik',
-        'href': 'https://stats.freifunk-leipzig.de/d/GVI39bqGk/nodespublic?orgId=1&refresh=5m&var-nodeid={NODE_ID}',
+        'href': '/grafana/d/KoKOqJc7k/node-public?orgId=1&refresh=30s&var-node_id={NODE_ID}',
         'image': '/render/clients/{NODE_ID}',
-        'title': 'Entwicklung der Anzahl der Clients innerhalb des letzten Tages'
+        'title': 'Entwicklung der Anzahl der Clients'
       },
       {
         'name': 'Traffic',
-        'href': 'https://stats.freifunk-leipzig.de/d/GVI39bqGk/nodespublic?orgId=1&refresh=5m&var-nodeid={NODE_ID}',
+        'href': '/grafana/d/KoKOqJc7k/node-public?orgId=1&refresh=30s&var-node_id={NODE_ID}',
         'image': '/render/traffic/{NODE_ID}',
-        'title': 'Traffic innerhalb des letzten Tages'
+        'title': 'Traffic'
       }
     ],
     // Array of data provider are supported
