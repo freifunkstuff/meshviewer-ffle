@@ -4,13 +4,13 @@ module.exports = function () {
       {
         'name': 'Clientstatistik',
         'href': 'https://stats.freifunk-leipzig.de/d/GVI39bqGk/nodespublic?orgId=1&refresh=5m&var-nodeid={NODE_ID}',
-        'image': 'https://stats.freifunk-leipzig.de/render/d-solo/GVI39bqGk/statistiken?orgId=1&panelId=2&var-nodeid={NODE_ID}&width=650&height=350&from=now-1d&theme=light',
+        'image': '/render/clients/{NODE_ID}',
         'title': 'Entwicklung der Anzahl der Clients innerhalb des letzten Tages'
       },
       {
         'name': 'Traffic',
         'href': 'https://stats.freifunk-leipzig.de/d/GVI39bqGk/nodespublic?orgId=1&refresh=5m&var-nodeid={NODE_ID}',
-        'image': 'https://stats.freifunk-leipzig.de/render/d-solo/GVI39bqGk/statistiken?orgId=1&panelId=6&var-nodeid={NODE_ID}&width=650&height=350&from=now-1d&theme=light',
+        'image': '/render/traffic/{NODE_ID}',
         'title': 'Traffic innerhalb des letzten Tages'
       }
     ],
