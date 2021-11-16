@@ -3,13 +3,13 @@ module.exports = function () {
     'nodeInfos': [
       {
         'name': 'Clientstatistik',
-        'href': '/grafana/d/KoKOqJc7k/node-public?orgId=1&refresh=30s&var-node_id={NODE_ID}',
+        'href': '/grafana/d/KoKOqJc7k/node-public?orgId=1&refresh=30s&from=now-24h&to=now&var-node_id={NODE_ID}',
         'image': '/render/clients/{NODE_ID}',
         'title': 'Entwicklung der Anzahl der Clients'
       },
       {
         'name': 'Traffic',
-        'href': '/grafana/d/KoKOqJc7k/node-public?orgId=1&refresh=30s&var-node_id={NODE_ID}',
+        'href': '/grafana/d/KoKOqJc7k/node-public?orgId=1&refresh=30s&from=now-24h&to=now&var-node_id={NODE_ID}',
         'image': '/render/traffic/{NODE_ID}',
         'title': 'Traffic'
       }
