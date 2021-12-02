@@ -21,11 +21,27 @@ module.exports = function () {
     'siteName': 'Freifunk Leipzig',
     'mapLayers': [
       {
+        'name': 'OpenStreetMap.de',
+        'url': 'https://d.tile.openstreetmap.de/{z}/{x}/{y}.png',
+        'config': {
+          'maxZoom': 19,
+          'attribution': '&copy; Openstreetmap | &copy; <a href="http://www.openstreetmap.de">OpenStreetMap</a>'
+        }
+      },
+      {
         'name': 'OpenStreetMap.HOT',
         'url': 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
         'config': {
           'maxZoom': 19,
           'attribution': '&copy; Openstreetmap France | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }
+      },
+      {
+        'name': 'Stamen Toner',
+        'url': 'http://stamen-tiles-c.a.ssl.fastly.net/toner/{z}/{x}/{y}.png',
+        'config': {
+          'maxZoom': 20,
+          'attribution': 'https://stamen.com/open-source/'
         }
       },
       {
