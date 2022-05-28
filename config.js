@@ -16,7 +16,8 @@ module.exports = function () {
     ],
     // Array of data provider are supported
     'dataPath': [
-      '/data/'
+      '/data/',
+      '/data/dd_',
     ],
     'siteName': 'Freifunk Leipzig',
     'mapLayers': [
